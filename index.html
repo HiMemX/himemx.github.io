@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<style>
+    html{
+        background-color: black;
+        font-family: Bitwise; src: url('bitwise.ttf');
+        color:white
+    }
+
+    #MainBody{
+        text-align: center;
+        border:6px black ridge;
+
+        margin:10px;
+        position:absolute;
+        top:0px;
+        right:0px;
+        bottom:0px;
+        left:0px;
+        
+        background-image:url("bg.png");
+        background-attachment:fixed;
+        background-size: 90%;
+        background-position: 40%;
+    }
+
+    #GamesBody{
+        text-align: center;
+        border:6px black ridge;
+        
+        margin:10px;
+        position:absolute;
+        top:0px;
+        left:0px;
+        width:300px;
+
+        background-color: black;
+    }
+
+    .GameButton{
+        width: 95%;
+        margin-bottom: 10px;
+    }
+
+    canvas{
+        overflow:hidden;
+        margin: 0;
+        padding: 0;
+        position:absolute;
+        top:0px;
+        right:0px;
+        bottom:0px;
+        left:0px;
+
+    }
+
+</style>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meat name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mem's hidden lab</title>
+    </head>
+    <body>
+        <div id="MainBody">
+            <h1>Mem's hidden laboratory</h1>
+            <canvas></canvas>
+            
+            <div id="GamesBody">
+                <h2>Projects</h2>
+                Javascript
+                <button class="GameButton" id="SnakeButton">Snake</button>
+
+                C#
+                <button onclick="window.open('https://github.com/HiMemX/Plankton')" title=".ho archive editor" class="GameButton">Plankton</button>
+                <button onclick="window.open('https://github.com/HiMemX/CSHO')" title=".ho archive library" class="GameButton">CSHO</button>
+
+                Python
+                <button onclick="window.open('https://github.com/HiMemX/Collin')" title="Extracts Models from .ho archives" class="GameButton">Collin</button>
+                <button onclick="window.open('https://github.com/HiMemX/DynamicGeometry')" title="Extracts and replaces StaticGeometries in .ho archives" class="GameButton">DynamicGeometry</button>
+
+            </div>
+        </div>
+    </body>
+    <script src="snake.js"></script>
+</html>
