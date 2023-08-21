@@ -60,6 +60,7 @@ class Application{
         let urlParams = new URLSearchParams(window.location.search);
         if(urlParams.has("joints")){
             this.jointCount = urlParams.get("joints");
+            if(this.jointCount < 5){this.jointCount = 5;}
         }
         
         this.jointDist = Math.sqrt(this.canvas.width**2 + this.canvas.height**2)/(2*(this.jointCount-1));
@@ -132,16 +133,17 @@ class Application{
 
         this.DrawRectFilled(0, 0, this.canvas.width, this.canvas.height, "black");
         this.DrawArms();
-        this.DrawRectFilled(this.mousePos.x-5, this.mousePos.y-5, 10, 10, "white");
+        //this.DrawRectFilled(this.mousePos.x-5, this.mousePos.y-5, 10, 10, "white");
         
         if(this.currpoint!=-1){
             this.ctx.beginPath();
             this.ctx.moveTo(this.movepoints[0][0], this.movepoints[0][1]);
-            for(let m=1; m<=this.currpoint; m++){
+            for(let m=1; m<=this.currpoint-1; m+=2){
                 this.ctx.lineTo(this.movepoints[m][0], this.movepoints[m][1]);
             }
+            this.ctx.lineTo(this.movepoints[this.currpoint][0], this.movepoints[this.currpoint][1])
             this.ctx.strokeStyle = "white";
-            this.ctx.lineWidth = 4;
+            this.ctx.lineWidth = 3;
             this.ctx.stroke();
         }
             
